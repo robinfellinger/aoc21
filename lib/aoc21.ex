@@ -1,7 +1,7 @@
 defmodule Aoc21 do
   def getInput(name) do
     filename = name <> ".txt"
-    {:ok, body} = File.read(filename)
+    {:ok, body} = File.read("data/" <> filename)
     body
   end
 
