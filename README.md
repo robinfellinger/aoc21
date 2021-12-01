@@ -1,5 +1,5 @@
-# Aoc21
+# 🎄Advent of Code 2021🎄
 
-**Learning Elixir with Advent of Code**
+## ⚗ Learning Elixir with Advent of Code ⚗
 
 
