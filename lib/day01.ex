@@ -1,8 +1,7 @@
 defmodule Day1 do
   def main do
-    IO.puts("Part 1: " <> Integer.to_string(part1))
-    IO.puts("Part 2: " <> Integer.to_string(part2))
-
+    IO.puts("Part 1: " <> Integer.to_string(part1()))
+    IO.puts("Part 2: " <> Integer.to_string(part2()))
   end
 
   def part1 do
