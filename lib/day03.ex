@@ -5,7 +5,7 @@ defmodule Day3 do
   end
 
   def part1 do
-    Aoc21.getInput("03") |> Aoc21.getInputList() |> Aoc21.stringListToAtoms() |> getPowerUsage()
+    Aoc21.get_input("03") |> Aoc21.get_input_list() |> Aoc21.string_list_to_atoms() |> getPowerUsage()
   end
 
   defp getBinaryCount(input, pos) do
@@ -37,7 +37,7 @@ defmodule Day3 do
   end
 
   def part2 do
-    Aoc21.getInput("03") |> Aoc21.getInputList() |> Aoc21.stringListToAtoms() |> getLifeSupport()
+    Aoc21.get_input("03") |> Aoc21.get_input_list() |> Aoc21.string_list_to_atoms() |> getLifeSupport()
   end
 
   defp getLifeSupport(input) do

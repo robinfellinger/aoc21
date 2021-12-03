@@ -5,10 +5,10 @@ defmodule Day1 do
   end
 
   def part1 do
-    Aoc21.getInput("01") |> Aoc21.getInputList() |> Aoc21.listToIntList() |> Day1.getIncreased()
+    Aoc21.get_input("01") |> Aoc21.get_input_list() |> Aoc21.list_to_int_list() |> Day1.get_increased()
   end
 
-  def getIncreased(inputList) do
+  def get_increased(inputList) do
     map =
       Enum.reduce(inputList, %{last: nil, increase: 0}, fn e, acc ->
         if acc.last < e do
@@ -22,23 +22,23 @@ defmodule Day1 do
   end
 
   def part2 do
-    Aoc21.getInput("01")
-    |> Aoc21.getInputList()
-    |> Aoc21.listToIntList()
-    |> Day1.getIncreased2()
+    Aoc21.get_input("01")
+    |> Aoc21.get_input_list()
+    |> Aoc21.list_to_int_list()
+    |> Day1.get_increased2()
   end
 
-  def getIncreased2(inputlist, increase \\ 0)
+  def get_increased2(inputlist, increase \\ 0)
 
-  def getIncreased2([a, b, c, d | tail], increase) when a + b + c >= b + c + d do
-    getIncreased2([b, c, d | tail], increase)
+  def get_increased2([a, b, c, d | tail], increase) when a + b + c >= b + c + d do
+    get_increased2([b, c, d | tail], increase)
   end
 
-  def getIncreased2([a, b, c, d | tail], increase) when a + b + c < b + c + d do
-    getIncreased2([b, c, d | tail], increase + 1)
+  def get_increased2([a, b, c, d | tail], increase) when a + b + c < b + c + d do
+    get_increased2([b, c, d | tail], increase + 1)
   end
 
-  def getIncreased2(_, increase) do
+  def get_increased2(_, increase) do
     increase
   end
 end

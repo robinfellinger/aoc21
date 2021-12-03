@@ -1,23 +1,23 @@
 defmodule Aoc21 do
-  def getInput(name) do
+  def get_input(name) do
     filename = name <> ".txt"
     {:ok, body} = File.read("data/" <> filename)
     body
   end
 
-  def getInputList(input) do
+  def get_input_list(input) do
     String.split(input, "\n")
   end
 
-  def stringListToAtoms(input) do
+  def string_list_to_atoms(input) do
     for n <- input, do: String.split(n, "", trim: true)
   end
 
-  def listToIntList(input) do
+  def list_to_int_list(input) do
     for n <- input, do: String.to_integer(n)
   end
 
-  def listToKeyword(input) do
+  def list_to_keyword(input) do
     input
     |> Enum.map(fn element ->
       [c | v] = String.split(element, " ")
