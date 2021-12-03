@@ -9,6 +9,7 @@ defmodule Day2 do
   end
 
   def move(inputlist, x \\ 0, z \\ 0)
+
   def move([[command | [v | _]] | rest], x, z) when command === "forward" do
     move(rest, x + v, z)
   end
@@ -30,6 +31,7 @@ defmodule Day2 do
   end
 
   def moveAim(inputlist, x \\ 0, z \\ 0, a \\ 0)
+
   def moveAim([[command | [v | _]] | rest], x, z, a) when command === "forward" do
     moveAim(rest, x + v, z + a * v, a)
   end

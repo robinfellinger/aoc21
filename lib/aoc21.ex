@@ -9,6 +9,10 @@ defmodule Aoc21 do
     String.split(input, "\n")
   end
 
+  def stringListToAtoms(input) do
+    for n <- input, do: String.split(n, "", trim: true)
+  end
+
   def listToIntList(input) do
     for n <- input, do: String.to_integer(n)
   end
