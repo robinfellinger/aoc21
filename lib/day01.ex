@@ -5,7 +5,10 @@ defmodule Day1 do
   end
 
   def part1 do
-    Aoc21.get_input("01") |> Aoc21.get_input_list() |> Aoc21.list_to_int_list() |> Day1.get_increased()
+    Aoc21.get_input("01")
+    |> Aoc21.get_input_list()
+    |> Aoc21.list_to_int_list()
+    |> Day1.get_increased()
   end
 
   def get_increased(inputList) do

@@ -5,8 +5,8 @@ defmodule Aoc21 do
     body
   end
 
-  def get_input_list(input) do
-    String.split(input, "\n")
+  def get_input_list(input, delimiter \\ "\n") do
+    String.split(input, delimiter)
   end
 
   def string_list_to_atoms(input) do
