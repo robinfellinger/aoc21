@@ -24,4 +24,9 @@ defmodule Aoc21 do
       [c, String.to_integer(Enum.at(v, 0))]
     end)
   end
+
+  def string_to_int(string) do
+    {number, _} = Integer.parse(string)
+    number
+  end
 end
