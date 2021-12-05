@@ -18,6 +18,6 @@
 
 [code](/lib/day04.ex)
 
-### Day 5: Hydrothermal Venture 🌪
+### 🌪 Day 5: Hydrothermal Venture 🌪
 
 [code](/lib/day05.ex)
