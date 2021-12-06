@@ -17,6 +17,11 @@ defmodule Aoc21 do
     for n <- input, do: String.to_integer(n)
   end
 
+  def commas_to_int(input) do
+    input = String.split(input, ",", trim: true)
+    input |> list_to_int_list()
+  end
+
   def list_to_keyword(input) do
     input
     |> Enum.map(fn element ->
