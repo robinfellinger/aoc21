@@ -26,3 +26,7 @@
 
 [code](/lib/day06.ex)
 
+### Day 7: The Treachery of Whales 🐳🦀⛽
+
+[code](/lib/day07.ex)
+

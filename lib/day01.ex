@@ -33,12 +33,12 @@ defmodule Day1 do
 
   def get_increased2(inputlist, increase \\ 0)
 
-  def get_increased2([a, b, c, d | tail], increase) when a + b + c >= b + c + d do
-    get_increased2([b, c, d | tail], increase)
-  end
-
   def get_increased2([a, b, c, d | tail], increase) when a + b + c < b + c + d do
     get_increased2([b, c, d | tail], increase + 1)
+  end
+
+  def get_increased2([a, b, c, d | tail], increase) do
+    get_increased2([b, c, d | tail], increase)
   end
 
   def get_increased2(_, increase) do

@@ -9,17 +9,17 @@ defmodule Day6 do
     Aoc21.get_input("06") |> Aoc21.commas_to_int() |> get_count()
   end
 
-
-
   defp get_count(fishes, max_days \\ 80) do
-    fishes = fishes
-    |> Enum.reduce(%{count: 0}, fn fish, acc ->
-      %{count: acc.count + calc_fish(fish, max_days).count + 1}
-    end)
+    fishes =
+      fishes
+      |> Enum.reduce(%{count: 0}, fn fish, acc ->
+        %{count: acc.count + calc_fish(fish, max_days).count + 1}
+      end)
+
     fishes.count
   end
 
-  defp calc_fish(fish, max_days, day \\ 0,  state \\ %{count: 0})
+  defp calc_fish(fish, max_days, day \\ 0, state \\ %{count: 0})
 
   defp calc_fish(fish, max_days, day, state) when fish + 1 > max_days - day, do: state
 
@@ -54,6 +54,4 @@ defmodule Day6 do
     fishes = Aoc21.get_input("06") |> Aoc21.commas_to_int()
     get_count(fishes, 256)
   end
-
-
 end
