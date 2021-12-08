@@ -30,3 +30,7 @@
 
 [code](/lib/day07.ex)
 
+### Day 8: Seven Segment Search 🔢
+
+[code](/lib/day08.ex)
+

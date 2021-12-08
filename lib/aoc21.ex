@@ -9,6 +9,10 @@ defmodule Aoc21 do
     String.split(input, delimiter)
   end
 
+  def split_list(input, delimiter \\ "\n") do
+    for n <- input, do: String.split(n, delimiter, trim: true)
+  end
+
   def string_list_to_atoms(input) do
     for n <- input, do: String.split(n, "", trim: true)
   end
