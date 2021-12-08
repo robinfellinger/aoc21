@@ -22,9 +22,6 @@ defmodule Day8 do
   end
 
   defp match(signals, output, chars \\ ["a", "b", "c", "d", "e", "f", "g"]) do
-    # IO.inspect(signals)
-    # IO.inspect(output)
-
     output
     |> Enum.reduce(%{1 => 0, 4 => 0, 7 => 0, 8 => 0}, fn n, acc ->
       match = Enum.find(signals, fn {key, val} -> val == n end)
@@ -49,7 +46,6 @@ defmodule Day8 do
         String.split(n, "", trim: true) |> Enum.sort()
       end)
 
-    # Enum.member?(["foo", "bar"], "foo")
     s =
       for n <- signals, Enum.member?([2, 4, 3, 7], Enum.count(n)), into: %{} do
         case Enum.count(n) do
@@ -59,11 +55,7 @@ defmodule Day8 do
           7 -> {8, n}
           _ -> 0
         end
-
-        # {n, Enum.at(signals, n)}
       end
-
-    IO.inspect(s)
   end
 
   defp prepare_output(line) do
