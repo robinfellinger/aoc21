@@ -34,3 +34,7 @@
 
 [code](/lib/day08.ex)
 
+### Day 9: Smoke Basin 🌋
+
+[code](/lib/day09.ex)
+

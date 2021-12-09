@@ -21,10 +21,10 @@ defmodule Day8 do
     match(prepare_signals(line), prepare_output(line))
   end
 
-  defp match(signals, output, chars \\ ["a", "b", "c", "d", "e", "f", "g"]) do
+  defp match(signals, output) do
     output
     |> Enum.reduce(%{1 => 0, 4 => 0, 7 => 0, 8 => 0}, fn n, acc ->
-      match = Enum.find(signals, fn {key, val} -> val == n end)
+      match = Enum.find(signals, fn {_key, val} -> val == n end)
 
       match = if match !== nil, do: match |> elem(0)
 
@@ -46,25 +46,23 @@ defmodule Day8 do
         String.split(n, "", trim: true) |> Enum.sort()
       end)
 
-    s =
-      for n <- signals, Enum.member?([2, 4, 3, 7], Enum.count(n)), into: %{} do
-        case Enum.count(n) do
-          2 -> {1, n}
-          4 -> {4, n}
-          3 -> {7, n}
-          7 -> {8, n}
-          _ -> 0
-        end
+    for n <- signals, Enum.member?([2, 4, 3, 7], Enum.count(n)), into: %{} do
+      case Enum.count(n) do
+        2 -> {1, n}
+        4 -> {4, n}
+        3 -> {7, n}
+        7 -> {8, n}
+        _ -> 0
       end
+    end
   end
 
   defp prepare_output(line) do
-    signals =
-      Enum.at(line, 1)
-      |> Aoc21.get_input_list(" ")
-      |> Enum.map(fn n ->
-        String.split(n, "", trim: true) |> Enum.sort()
-      end)
+    Enum.at(line, 1)
+    |> Aoc21.get_input_list(" ")
+    |> Enum.map(fn n ->
+      String.split(n, "", trim: true) |> Enum.sort()
+    end)
   end
 
   # 🎄------------------PART-2---------------------🎄
@@ -88,9 +86,9 @@ defmodule Day8 do
     map =
       output
       |> Enum.reduce(%{number: ""}, fn n, acc ->
-        match = Enum.find(signals, fn {key, val} -> val == n end) |> elem(0)
+        match = Enum.find(signals, fn {_key, val} -> val == n end) |> elem(0)
 
-        map = %{number: acc.number <> Integer.to_string(match)}
+        %{number: acc.number <> Integer.to_string(match)}
       end)
 
     map.number
@@ -135,7 +133,7 @@ defmodule Day8 do
   end
 
   defp filter_signals(signals, map) do
-    for n <- signals, Enum.find(map, fn {key, val} -> val == n end) == nil, do: n
+    for n <- signals, Enum.find(map, fn {_key, val} -> val == n end) == nil, do: n
   end
 
   defp get_digit(signals, subtract, dig) do
