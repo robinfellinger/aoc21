@@ -21,6 +21,10 @@ defmodule Aoc21 do
     for n <- input, do: String.to_integer(n)
   end
 
+  def list_to_char_list(input) do
+    for n <- input, do: String.to_charlist(n)
+  end
+
   def list_to_map(input) do
     for n <- input, do: String.to_integer(n)
   end

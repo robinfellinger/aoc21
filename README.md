@@ -38,3 +38,7 @@
 
 [code](/lib/day09.ex)
 
+### Day 10: Syntax Scoring ✳
+
+[code](/lib/day10.ex)
+
