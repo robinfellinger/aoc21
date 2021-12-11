@@ -42,3 +42,6 @@
 
 [code](/lib/day10.ex)
 
+### Day 11: Dumbo Octopus 🐙
+
+[code](/lib/day11.ex)

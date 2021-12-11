@@ -26,7 +26,7 @@ defmodule Aoc21 do
   end
 
   def list_to_map(input) do
-    for n <- input, do: String.to_integer(n)
+    for n <- 0..(Enum.count(input) - 1), into: %{}, do: {n, Enum.at(input, n)}
   end
 
   def commas_to_int(input) do
